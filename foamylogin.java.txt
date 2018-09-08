@@ -1,0 +1,117 @@
+public class FoamyLogin {
+    /**
+     * @param args
+     * @throws InterruptedException
+     */
+    public static void main(String[] args) throws InterruptedException {
+			
+			// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Java\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://foamy.goodbits.in/web_app/#/login");
+		driver.manage().window().maximize();
+		//Title printing
+		System.out.println("The Title is "+ driver.getTitle());
+		Thread.sleep(1000);
+		/******************LOG IN********************
+	                  No mail & No password*/
+		driver.findElement(By.cssSelector("input[type='text']")).sendKeys("");
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='password']")).sendKeys("");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/ng-view/div/div/div[2]/div[1]/div[2]/form/div[4]/div[1]/div/button")).click();
+		Thread.sleep(3000);
+		
+		//            with mail & No password
+		driver.findElement(By.cssSelector("input[type='text']")).sendKeys("anjali@goodbits.in");
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='password']")).sendKeys("");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/ng-view/div/div/div[2]/div[1]/div[2]/form/div[4]/div[1]/div/button")).click();
+		Thread.sleep(1000);
+		
+		//            with password & no email
+		driver.findElement(By.cssSelector("input[type='text']")).sendKeys("");
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='password']")).sendKeys("12345678");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/ng-view/div/div/div[2]/div[1]/div[2]/form/div[4]/div[1]/div/button")).click();
+		Thread.sleep(3000);
+		
+		//             with number as Email & no password
+		driver.findElement(By.cssSelector("input[type='text']")).clear();
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='text']")).sendKeys("123456");
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='password']")).clear();
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='password']")).sendKeys("");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/ng-view/div/div/div[2]/div[1]/div[2]/form/div[4]/div[1]/div/button")).click();
+		Thread.sleep(3000);
+		
+		//            text as email & valid password
+		driver.findElement(By.cssSelector("input[type='text']")).clear();
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='text']")).sendKeys("abc");
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='password']")).clear();
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='password']")).sendKeys("12345678");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/ng-view/div/div/div[2]/div[1]/div[2]/form/div[4]/div[1]/div/button")).click();
+		Thread.sleep(3000);
+	
+		//           with a valid mail & invalid password(3)
+		driver.findElement(By.cssSelector("input[type='text']")).clear();
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='text']")).sendKeys("anjali@goodbits.in");
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='password']")).clear();
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='password']")).sendKeys("123");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/ng-view/div/div/div[2]/div[1]/div[2]/form/div[4]/div[1]/div/button")).click();
+		Thread.sleep(3000);
+		
+		//            with invalid mail & invalid password
+		driver.findElement(By.cssSelector("input[type='text']")).clear();
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='text']")).sendKeys("x@y.com");
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='password']")).clear();
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='password']")).sendKeys("123@");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/ng-view/div/div/div[2]/div[1]/div[2]/form/div[4]/div[1]/div/button")).click();
+		Thread.sleep(3000);
+	
+		//           with invalid mail &valid password
+		driver.findElement(By.cssSelector("input[type='text']")).clear();
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='text']")).sendKeys("xyz");
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='password']")).clear();
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='password']")).sendKeys("12345678");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/ng-view/div/div/div[2]/div[1]/div[2]/form/div[4]/div[1]/div/button")).click();
+		Thread.sleep(3000);
+	
+		//            with valid mail and valid password
+		driver.findElement(By.cssSelector("input[type='text']")).clear();
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='text']")).sendKeys("testergoodbits1@gmail.com");
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='password']")).clear();
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[type='password']")).sendKeys("qwerty123@");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/ng-view/div/div/div[2]/div[1]/div[2]/form/div[4]/div[1]/div/button")).click();
+		Thread.sleep(3000);
+	
+	
+		
+		
+		}
+}
